@@ -1,8 +1,9 @@
 # Java Programming
-Project Contains Java Knowledge and Practice Coding
+Project Contains Java Knowledge and Practice Coding. 
+You can download to check out examples of Core Java concepts and JavaSE8.
 
-Project Type: Simple Java Project
+Project Type: Java Project
 
 IDE: IntelliJ Community
 
-Content: Core Java, JavaSE8
+Content: Core Java, JavaSE 8
