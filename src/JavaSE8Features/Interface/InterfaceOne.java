@@ -2,22 +2,40 @@ package JavaSE8Features.Interface;
 
 public interface InterfaceOne {
 
-    //Private Variables cannot be Created in Interface
+    //All Variables in Interface are Public, Static, Final
     int IntVar = 20;
     int IntPrivateVar = 40;
 
-    //From Java SE8 - Interface can have Implemented methods, but they should be Default
-    //From Java SE8 - Default Interface should have a body
-    default void DefPublicMethod(){
-        System.out.println("Public Default Method 1");
+
+    //All non-implemented methods will be public, abstract implicitly
+    //Below method should be implemented in all classes which implements this interface
+    String InterOneAbstractMethod();  //public, abstract
+
+    //From Java SE8 - Interface can have default & static methods but should have implementation
+    //default method usage - Can add extra method without disturbing the classes that implements this interface. This method can be overridden in ChildClasses
+    public default void InterOneDefaultMethod(){
+        System.out.println("InterfaceOne Public Default Method");
+    }
+    public static void InterOneStaticMethod(){
+        System.out.println("InterfaceOne Public Static Method");
     }
 
-    //From Java SE9 - Interface can have Private Implemented Methods, need not be default
-    //From Java SE9 - Private Methods in Interface Should have a Body
-    private void PrivateMethod(){
-        System.out.println("Private Method 1");
+    //From Java SE9, Interface can have private methods either static/non-static methods
+    //private method usage - code reusability within Interface without being accessed by other classes.
+    private static void InterOnePrivateStaticMethod() {
+        System.out.println("InterfaceOne Private Static Method");
+    }
+    private void InterOnePrivateMethod(){
+        System.out.println("InterfaceOne Private NonStatic Method");
     }
 
-    String PublicMethod1();
+    default void InterOneDefaultMethodNotOverridden(){
+        System.out.println("InterfaceOne Default Method Not Overridden");
+    }
+
+    default void InterfacesCommonDefaultMethod(){
+        System.out.println("CommonDefaultMethod in Both Interfaces");
+    }
+    void InterfacesAbstractCommonMethod();
 
 }

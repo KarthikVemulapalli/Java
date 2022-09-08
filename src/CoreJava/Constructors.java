@@ -5,13 +5,15 @@ public class Constructors {
     private String Name;
     private String Gender;
     private int Age;
-    static int piipos=90;
 
+    //Non-Parameterized Constructor
     Constructors(){
         Name = "Karthik";
         Gender = "Male";
         Age = 25;
     }
+
+    //Parametrized Constructor
     Constructors(String Name, String Gender, int Age){
         this.Name = Name;
         this.Gender = Gender;

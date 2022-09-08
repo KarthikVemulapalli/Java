@@ -37,7 +37,7 @@ public class VariableMethodCalling {
     public static void main(String[] args) {
         OtherClassMethod();   //Static method do not require Object to call
 
-        VariableMethodCalling JCMCObj = new VariableMethodCalling();   //on-Static methods require Object to call inside Static main method
+        VariableMethodCalling JCMCObj = new VariableMethodCalling();   //Non-Static methods require Object to call inside Static main method
         JCMCObj.ClassMethod1();
         JCMCObj.ClassMethod2();
     }

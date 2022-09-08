@@ -10,6 +10,6 @@ public interface BankInterface {
 
     double issueHouseLoan(CustomerClass customer);
 
-    double issueGoldLoan(CustomerClass customer);        //Methods are by default public and abstract
+    double issueGoldLoan(CustomerClass customer);        //Methods are by default public and abstract till Java 1.7 version
 
 }

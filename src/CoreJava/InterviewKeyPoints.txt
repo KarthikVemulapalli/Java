@@ -1,0 +1,110 @@
+Meaning of "public static void main(String[] args)"
+	* The program execution starts from the main method in Java.
+	* 'public' is access modifier has been used for the main method as it is invoked using the Java tool by JVM. If any other access modifier is given the JVM cannot identify the main method.
+	* The static method has been used for the main method as JVM cannot invoke the main method using the object of the class.
+	* Void is return type. As execution stops after main method. No point in keeping retrun type.
+	* The parameter of the main method is a String array. Any number of inputs can be passed to the Java program during runtime using command-line arguments. A String array is used to store these inputs which can be used in our code.
+
+* Only two access modifiers (public & default) can be used for creating Class/Interface/AbstractClass. Private and Protected cannot be used.
+* During Class/Interface/AbstractClass creation extends should be written ahead of Implements.
+* You cannot call 'void' return type methods in System.out.print(). Because the method System.out.print() expects an Object as a parameter to print, whereas the void method doesn't return anything.
+
+Variables:
+    1. Local Variable
+    2. Static Variable
+    3. Instance Variable (Global Variable)
+    4. Reference Variable (Classes, interfaces, arrays, enumerations & annotations are reference types in Java. Reference variables hold the objects/values of reference types in Java.)
+
+* 'this' keyword is used on a variable inside a method. To differentiate between global/instance variables to the local variable.
+
+Static:
+    * Static block code will executes before the main() method.
+    * Static variables/methods can be accessed directly inside a Static/NonStatic method of same class.
+    * Using ClassName Static variables/Methods can be accessed inside a Static/NonStatic method of different class.
+    * You can only make nested classes either static or non-static, the top level class cannot be made static.
+    * static methods/variables belongs to a class but not to the objects of the class.
+    * We cannot override static methods, even though we can create same method in ChildClass it doesn't mean the method is overridden.
+
+NonStatic:
+    * NonStatic variables/methods can be accessed in static method using ClassObject.
+    * NonStatic variables/methods can be accessed directly inside a NonStatic method of same class.
+    * NonStatic variables/methods can be accessed using ClassObject inside a Static/NonStatic method of different class.
+
+Public:
+    * Public variables/methods can be accessed anywhere in the project using ClassObject (Outside Class) & directly accessed (Inside Class).
+
+Private: Can only be accessed inside the same class.
+    * Private Variables/Methods cannot be accessed outside the class (even with Classname or Class Object).
+    * Private variables/methods can only be accessed inside the class in any non-static method.
+    * Private variables/method can only be accessed inside the class Static method using ClassObject.
+    * Private variables/methods cannot be accessed outside the class or in ChildClass
+    * Private methods cannot be overridden, even though we can create same method in ChildClass it doesn't mean the method is overridden.
+
+Protected:
+    * Variables/Methods can be accessed only in only ChildClass of other package, any class in same package.
+
+Default: Package Private
+    * Variables/Methods can be accessed only inside the same package of any class.
+
+Final Keyword
+    * Stop value change for Variables
+    * Stop Method Overridding in ChildClass
+    * Stop Inheritance of a class
+    * Abstract/Interface method cannot be used final (Abstract method need to be implemented so cannot be final)
+
+Abstract Class
+    * 'abstract' keyword needs to be mentioned for an abstract method (Non-Implemented method)
+    * Abstract class cannot be instantiated (cannot create object of an abstract class)
+    * Abstract class can have constructors & Static methods
+    * There can be an empty abstract class with no abstract/implemented methods
+    * Abstract method should be compulsory present inside an Abstract Class/Interface
+    * All type of AccessModifiers can be used inside an AbstractClass.
+    * An Abstract method cannot be static
+    * The ChildClass should override all the abstract methods in ParentAbstractClass unless the ChildClass is Abstract
+    * Abstract class should only be Extended (extends), not implemented.
+
+Interface
+    * Marker/Tagging interface - Empty Interface
+    * Functional Interface - Only one abstract method & n number of default methods
+    * In an interface all variables are implicitly public, static, and final.
+    * Interfaces cannot have constructors
+    * Object cannot be created to Interface
+    * In an interface methods with no implementation are implicitly public and abstract.
+    * We can create public/default interface
+    * From Java SE8, Interface can have static & default methods
+    * From Java SE9, Interface can have private methods with either static/non-static.
+    * Class, Abstract class, Nested Class, Enum, Dynamic proxy can implements interfaces.
+    * Only interface can extends an interface.
+    * Default methods in ParentInterface can be called in ChildClass using 'InterfaceName.super.DefaultMethodName()'
+
+    ** InterObj cannot access methods specific to ChildClass. By stating below, the InterOneObj can access only Interface methods & Interface Implemented methods in ChildClass
+        Interface InterOneObj = new ChildClass();
+    ** WebDriver driver = new ChromeDriver(); where ChromeDriver is class, WebDriver is interface
+        The above line is only allowed when ChromeDriver implements WebDriver
+        or type casting needs to be done 'Interface obj = (Interface) new Class();
+
+Annotation
+    * Marker annotation - Empty annotation
+    * Single & Multi value annotation - Single & multiple methods present in annotation
+    * '@interface' should be used while creating Annotation
+
+Inheritance
+    * Calling ParentClass Constructor should be the first line inside a ChildClass constructor
+    * Default Constructor will be called automatically inside ChildClass Constructor
+    * If ParentClass has only parameterized constructor, we should manually call the parent class constructor in ChildClass constructor.
+    * If same Variables of ParentClass are not present in SubClass, ParentClass variables are used without super keyword
+    * In case if same variables are present in ParentClass & ChildClass, then to differentiate 'super' needs to be used to represent ParentClass variables
+    * 'super' keyword is used for a variable/method in a subclass. To differentiate ParentClass variable/method with subclass variable/method.
+    * Private Variables/Methods of ParentClass cannot be accessed in ChildClass.
+    * You cannot override methods of ParentClass if it defined with 'final' keyword
+    * We need to manually implement NonParametrized Constructor if Parametrized Constructor is present.
+
+    ** The below line can be written only when ClassB extends ClassA because 'A SuperClass reference variable can hold reference of SubClass object without typecasting'
+        ClassA Obj = new ClassB();
+    ** In below line, ChildClass reference variable cannot hold reference of ParentClass object without typecasting'.
+        ChildClass ChildClassObj = (ChildClass) new ParentClass();
+        Above line is similar to ChildClass ChildClassObj = new ChildClass();
+
+Polymorphism:
+    * It is only applicable for Methods but not variables.
+    * method overriding & method overloading

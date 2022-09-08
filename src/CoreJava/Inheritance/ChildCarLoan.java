@@ -2,12 +2,16 @@ package CoreJava.Inheritance;
 
 public class ChildCarLoan extends ParentLoan {
 
-    //Same Variables of SuperClass are not present in SubClass, so below variables are used without super keyword
+    //Same Variables of ParentClass are not present in ChildClass, so below variables are used without super keyword
     ChildCarLoan() {		             //ChildClass Constructor
-        super("Car Loan");     //If no Parameterized Constructor it will call Default Constructor
+        super("Car Loan");
+
+        //Calling ParentClass Constructor should be the first line inside child class constructor
+        //Default Constructor will be called automatically inside ChildClass Constructor
+        //If Parameterized Constructor not called above it will call Default Constructor
 
         System.out.println("JavaSavings Bank - Car Loan");
-        tenure = 5;            //Reusing super class member variables
+        tenure = 5;            //Reusing parent class member variables
         principal = 20000;
         interestRate = 8.5f;
     }
@@ -19,6 +23,21 @@ public class ChildCarLoan extends ParentLoan {
 
     public static void StaticMethod(){
         System.out.println("Child Static Method");
+    }
+
+    public void ChildMethod(){
+        System.out.println("Child Method");
+    }
+
+
+    public static void main(String args[]){
+        //The below line can be written when ChildCarLoan extends ParentLoan
+        //'A SuperClass reference variable can hold reference of SubClass object without typecasting'
+        ParentLoan ParentLoanObj = new ChildCarLoan();
+
+        //ChildClass reference variable cannot hold reference of ParentClass object without typecasting'
+        ChildCarLoan ChildCarLoanObj = (ChildCarLoan) new ParentLoan();
+        //Above line is similar to ChildCarLoan ChildCarLoanObj = new ChildCarLoan();
     }
 
 }

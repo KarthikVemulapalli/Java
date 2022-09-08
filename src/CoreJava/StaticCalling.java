@@ -2,6 +2,7 @@ package CoreJava;
 
 public class StaticCalling {
 
+    //Static Methods/Variables are class specific i.e. There are common for all different ClassObjects
     public int NonStaticVar;
     static int StaticVar;
 

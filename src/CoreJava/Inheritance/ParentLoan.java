@@ -7,6 +7,7 @@ public class ParentLoan {
     float interestRate;
     private String accountNo;   //Private Variables can't be accessed in ChildClass
 
+    //NonParameterized constructor need to be manually written if Parameterized constructor
     ParentLoan(){
         System.out.println("JavaSavings Bank - Loan");
     }
