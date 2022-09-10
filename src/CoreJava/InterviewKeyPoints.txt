@@ -15,6 +15,7 @@ Variables:
     3. Instance Variable (Global Variable)
     4. Reference Variable (Classes, interfaces, arrays, enumerations & annotations are reference types in Java. Reference variables hold the objects/values of reference types in Java.)
 
+* Local variables cannot have any AccessModifiers, they access will be Method-Private.
 * 'this' keyword is used on a variable inside a method. To differentiate between global/instance variables to the local variable.
 
 Static:
@@ -24,6 +25,8 @@ Static:
     * You can only make nested classes either static or non-static, the top level class cannot be made static.
     * static methods/variables belongs to a class but not to the objects of the class.
     * We cannot override static methods, even though we can create same method in ChildClass it doesn't mean the method is overridden.
+    * We are not allowed to create static class/variables/method inside method.
+    * We can create static class inside class and outside method.
 
 NonStatic:
     * NonStatic variables/methods can be accessed in static method using ClassObject.
@@ -88,7 +91,76 @@ Annotation
     * Single & Multi value annotation - Single & multiple methods present in annotation
     * '@interface' should be used while creating Annotation
 
-Inheritance
+InnerClass:
+    1. LocalInnerClass - NonStaticClass created inside method. (We are not allowed to create static class/variables/method inside method).
+    2. NonStaticInnerClass - NonStaticClass created outside method and inside class
+    3. StaticInnerClass - StaticClass created outside method and inside class
+    4. AnonymousInnerClass - Similar to localClass but no name. And can be created to use at one particular instance.
+
+    * ObjectCreation for NonStaticInnerClass/StaticInnerClass
+        NonStaticInnerClass -
+            1. Create object of OuterClass:
+                OuterClass OuterClassObj = new OuterClass();
+            2. Create object of InnerClass: for creating NonStaticInnerClass object, we require OuterClassObj
+                OuterClass.NonStaticInnerClass NSICObj = OuterClassObj.new NonStaticInnerClass();
+        StaticInnerClass -
+            1. Create object of InnerClass: for creating StaticInnerClass object,
+                OuterClass.StaticInnerClass SICObj = new OuterClass.StaticInnerClass();
+    * AnonymousClass can be created for Class & Interface. Class for overidding methods, Interface for Implementing methods.
+    ** Rare Scenario: We can create object of Interface using AnonymousClass
+    * All cannot create static variables/methods inside any inner class.
+    * AnonymousClass don't have name, the name is decided by compiler.
+    * AnonymousClass cannot be public, private, protected, or static.
+    * Anonymous objects, object creation without reference variable 'new ClassA()'.
+
+Exception Handling:
+    * If exception is not handled using 'try-catch', it stops the execution.
+    * Error vs Exception
+        - All errors are unchecked, exceptions are Checked & unchecked
+        - Errors happen at run-time, exceptions happens at compile-time & run-time
+        - Impossible to recover from error, Possible to recover from exceptions.
+    * 'Object' is ParentClass of 'Throwable'
+        Exceptions & Errors are ChildClasses of 'Throwable'
+            Exceptions - Checked (CompileTime-Issue in coding structure) & Unchecked exceptions (NullPointerException exception)
+            Errors - Assertion Error, VirtualMachine Error
+    * Java Exceptions are of two types
+        1. Built-In (ArithmeticException, ArrayIndexOutOfBoundException, ClassNotFoundException, IOException, InterruptedException, NoSuchFieldException, NoSuchMethodException, NumberFormatException, RuntimeException, StringIndexOutOfBoundsException)
+        2. User Defined
+    * try - Specify block where code is written. we can use nested try.
+      catch - Block of code executes when there is exception in try block. We can use multi catch blocks for single try block.
+      finally - Block of code executes even or not there is a exception.
+        * it is mandatory to use either 'try-catch' or 'try-finally'. try cannot be used alone.
+        * finally block of statement should be the last in order. Order to be followed is 'try -> catch -> finally'
+      throw - Keyword used to throw an exception.
+      throws - Keyword used to declare exceptions, this specifies that there may be certain exception in method. Used in method signature.
+
+    * throw vs throws
+        - throw Used to explicitly throw an Exception, throws is to declare an exception
+        - Checked exceptions cannot be propagated using throw, Checked exceptions can be propagated using throws.
+        - throw used within a method, throws used in method signature
+        - Using throw we cannot throw multiple exceptions, using throws we can declare multiple exceptions.
+
+
+Object-Oriented Programming Structure (OOPS):
+* Object - RealWorld entities that has their own properties and behaviour. Ex: Dog
+* Class - Blueprint from which an objects properties and behaviours are decided.
+    Ex: Properties/Variables (breed, size, age, weight, colour), Behaviours/Methods (eat(), sleep(), run(), bark()).
+* An object is also called as container which contains both Properties & Behaviours.
+
+*Object-Oriented vs Procedural Programming:
+    - BottomUp approach | TopDown Approach
+    - Have access modifiers | Do not have access modifiers
+    - More Secure | Less Secure
+    - Code Re-Usability | Need to modify entire code for each change
+
+Polymorphism (Static/CompileTime & Dynamic/RunTime Polymorphism):
+    * It is only applicable for Methods but not variables.
+    * method overriding (run-time) & method overloading(compile-time)
+    * Method Overloading is achieved with same Method names
+    * Method Overloading is achieved with different parameters, order of parameters type called is also considered.
+    * Method Overloading is not achieved by changing return-type of method.
+
+Inheritance (Is-A relationship)
     * Calling ParentClass Constructor should be the first line inside a ChildClass constructor
     * Default Constructor will be called automatically inside ChildClass Constructor
     * If ParentClass has only parameterized constructor, we should manually call the parent class constructor in ChildClass constructor.
@@ -105,6 +177,10 @@ Inheritance
         ChildClass ChildClassObj = (ChildClass) new ParentClass();
         Above line is similar to ChildClass ChildClassObj = new ChildClass();
 
-Polymorphism:
-    * It is only applicable for Methods but not variables.
-    * method overriding & method overloading
+Abstraction
+    * It is the methodology of hiding the implementation details from the user and only providing the functionality to them.
+    * This is achieved by using Interface/AbstractClass.
+
+Encapsulation (Securing Confidential data without being exposed directly)
+    * It is the mechanism of wrapping up of data and code acting on the methods together as a single unit.
+    * Achieved by declaring the variables of a class as private and then providing the public setter and getter methods to modify and view the variables values.

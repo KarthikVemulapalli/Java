@@ -6,15 +6,16 @@ public class Constructors {
     private String Gender;
     private int Age;
 
+    //We need provide constructor access modifier as Public, in order to create object of class outside the package. if not the access is considered as Package-Private
     //Non-Parameterized Constructor
-    Constructors(){
+    public Constructors(){
         Name = "Karthik";
         Gender = "Male";
         Age = 25;
     }
 
     //Parametrized Constructor
-    Constructors(String Name, String Gender, int Age){
+    public Constructors(String Name, String Gender, int Age){
         this.Name = Name;
         this.Gender = Gender;
         this.Age = Age;

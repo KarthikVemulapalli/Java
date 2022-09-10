@@ -2,6 +2,9 @@ package CoreJava.AccessModifiers;
 
 public class AccessModifiers {
 
+    //Access modifiers in Java - public, private, protected, Package-Private (default considered if no access modifier is mentioned)
+    //Package-Private is not a keyword, this kind access is considered if no specifier is mentioned
+
     //Outside Package refer - AMChildClassOtherPackage & AMClassOutsidePackage
     //Inside Same Package refer - AMChildClass & AMClass
 

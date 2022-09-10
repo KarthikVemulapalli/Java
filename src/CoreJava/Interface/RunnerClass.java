@@ -3,6 +3,7 @@ package CoreJava.Interface;
 public class RunnerClass {
 
     public static void main(String[] args) {
+        //The below can be written only when SubBranchClass implements BankInterface
         BankInterface BankInterfaceObj = new SubBranchClass();
 
         CustomerClass customer = new CustomerClass();
@@ -21,6 +22,7 @@ public class RunnerClass {
         double vloan = BankInterfaceObj.issueVehicleLoan("bike", customer);
         System.out.println("Vehicle loan amount is..." + vloan);
         System.out.println("Caution money is..." + BankInterface.CAUTION_MONEY);
+
     }
 
 }

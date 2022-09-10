@@ -1,17 +1,17 @@
 package CoreJava.Inheritance;
 
 public class ParentLoan {
-
+    //Final keyword in class prevents it from Extending
     int tenure;
     double principal;
     float interestRate;
     private String accountNo;   //Private Variables can't be accessed in ChildClass
 
     //NonParameterized constructor need to be manually written if Parameterized constructor
-    ParentLoan(){
+    public ParentLoan(){
         System.out.println("JavaSavings Bank - Loan");
     }
-    ParentLoan(String LoanName){
+    public ParentLoan(String LoanName){
         System.out.println("JavaSavings Bank - Loan and "+LoanName);
     }
 

@@ -1,0 +1,30 @@
+Collection: The collection in java is a framework that provides an architecture to store and manipulate the group of objects.
+    Collection(interface) extends Iterable(interface)
+    List(interface), Queue(interface), Set(interface) extends Collection(interface)
+
+    List
+        ArrayList(class) & LinkedList(class) & Vector(class) [Stack(class) extends Vector] implements 'List'
+    Queue
+        PriorityQueue(class) implements 'Queue'
+        Deque(interface) [LinkedList(class) & ArrayDeque(class) implements Deque] extends 'Queue'
+    Set
+        HashSet(class) & LinkedHashSet(class) implements 'Set'
+        SortedSet(inteface) [TreeSet(class) implements SortedSet] extends 'Set'
+
+
+Array vs ArrayList: Both are DataStructures
+    * Both have index based search.
+    * Array length is static. ArrayList size() is dynamic.
+    * An Array performs fast in comparison to ArrayList because of fixed size.
+      ArrayList is internally backed by the array in Java. The resize operation in ArrayList slows down the performance.
+    * An array can store both objects and primitives type.
+      We cannot store primitive type in ArrayList. It automatically converts primitive type to object.
+    * We use for loop/for each loop to iterate over an array.
+      We use an iterator/for loop/for each loop to iterate over ArrayList.
+    * We can add elements in an array by using the assignment operator.
+      Java provides the add() method to add elements in the ArrayList.
+    * Array can be multi-dimensional. ArrayList is only 1-Dimensional.
+    * Initialization:
+        int[] intArray = new IntArray[lengthOfArray];
+        ArrayList<Type> arrayList = new ArrayList<Type>();
+    * We cannot insert/remove index elements in Array. Whereas in ArrayList we can. In both we can modify the value of Index elements.

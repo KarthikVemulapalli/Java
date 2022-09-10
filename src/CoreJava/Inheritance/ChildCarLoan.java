@@ -3,7 +3,7 @@ package CoreJava.Inheritance;
 public class ChildCarLoan extends ParentLoan {
 
     //Same Variables of ParentClass are not present in ChildClass, so below variables are used without super keyword
-    ChildCarLoan() {		             //ChildClass Constructor
+    public ChildCarLoan() {		             //ChildClass Constructor
         super("Car Loan");
 
         //Calling ParentClass Constructor should be the first line inside child class constructor

@@ -7,10 +7,9 @@ public interface InterfaceTwo extends SuperInterface{
     static void InterTwoStaticMethod(){
         System.out.println("InterfaceTwo Static Method");
     }
-    default void InterTwoDefaultMethodNotOverridden(){
+    public default void InterTwoDefaultMethodNotOverridden(){
         System.out.println("InterfaceTwo Default Method not Overridden");
     }
-
 
     default void InterfacesCommonDefaultMethod(){
         System.out.println("CommonDefaultMethod in Both Interfaces");
