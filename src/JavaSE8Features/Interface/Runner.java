@@ -30,6 +30,10 @@ public class Runner {
         InterfaceOne.InterOneStaticMethod();
         InterfaceTwo.InterTwoStaticMethod();
 
+        //Common Variable present in InterOne, InterTwo, InterChildClass
+        //This will call the CommonVariable of ReferenceVariable used for calling. So here we are InterChildClass reference variable, so it calls InterChildClass variable.
+        System.out.println(InterChildClassObj.CommonVariable);
+
     }
 
 }

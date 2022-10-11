@@ -6,6 +6,7 @@ public interface InterfaceOne {
     int IntVar = 20;
     int IntPrivateVar = 40;
 
+    String CommonVariable = "InterOne Var";
 
     //All non-implemented methods will be public, abstract implicitly
     //Below method should be implemented in all classes which implements this interface
@@ -16,6 +17,7 @@ public interface InterfaceOne {
     public default void InterOneDefaultMethod(){
         System.out.println("InterfaceOne Public Default Method");
     }
+    //static method usage - We cannot override static methods in Java. So child class can also have same method name, but this doesn't mean Interface Static method is overridden.
     public static void InterOneStaticMethod(){
         System.out.println("InterfaceOne Public Static Method");
     }

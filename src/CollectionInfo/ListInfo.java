@@ -20,6 +20,7 @@ public class ListInfo {
         StringArrayListObj.add("Hello");
         StringArrayListObj.add("String");
 
+
         for (int i=0; i<IntArrayListObj.size(); i++){
             System.out.println("IntegerArray - "+IntArrayListObj.get(i));
         }

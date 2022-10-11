@@ -8,6 +8,7 @@ public class Arrays {
     public void arrayMethod(){
         /*Array Declaration & Initialization
         Array index starts with '0'
+        An Array is a container which stores multiple values of same datatype
         Arrays are stored in contagious memory [consecutive memory locations]
         The size of an array must be specified by int/short value and not long
         We face 'ArrayIndexOutOfBoundsException', if tried accessing elements outside array index */

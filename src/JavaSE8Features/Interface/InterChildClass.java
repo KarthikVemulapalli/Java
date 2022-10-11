@@ -2,6 +2,8 @@ package JavaSE8Features.Interface;
 
 public class InterChildClass implements InterfaceTwo, InterfaceOne {
 
+    String CommonVariable = "InterChildClass Var";
+
     //All Abstract methods should be implemented
     @Override
     public String InterOneAbstractMethod() {
@@ -50,20 +52,23 @@ public class InterChildClass implements InterfaceTwo, InterfaceOne {
     }
 
 
-
     public static void main(String Arguments[]){
         InterChildClass ChildClassObj = new InterChildClass();
-        //InterOneObj cannot access methods of ChildClass Specific & InterfaceTwo
+        //InterOneObj cannot access methods belongs to ChildClass & InterfaceTwo
         //By stating below, the InterOneObj can only access InterfaceOne methods & InterfaceOne Implemented methods in ChildClass
         InterfaceOne InterOneObj = ChildClassObj;
+        //The above also states that, 'I have created an object of ChildClass to implement methods present in ParentInterface'
 
+        //we can state the below line, it is similar to 'InterChildClass ChildClassObj = new InterChildClass()'. We are typecasting Interface type reference variable to ChildClass type.
+        InterChildClass InterChildClassObj = (InterChildClass) InterOneObj;
 
-        //Only can access below methods
+        //Only can access below methods (InterfaceOne methods & InterfaceOne Implemented methods in ChildClass)
         InterOneObj.InterOneAbstractMethod();
         InterOneObj.InterOneDefaultMethod();
         InterOneObj.InterOneDefaultMethodNotOverridden();
         InterOneObj.InterfacesCommonDefaultMethod();
         InterOneObj.InterfacesAbstractCommonMethod();
+
     }
 
 }

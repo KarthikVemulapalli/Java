@@ -8,6 +8,9 @@ Meaning of "public static void main(String[] args)"
 * Only two access modifiers (public & default) can be used for creating Class/Interface/AbstractClass. Private and Protected cannot be used.
 * During Class/Interface/AbstractClass creation extends should be written ahead of Implements.
 * You cannot call 'void' return type methods in System.out.print(). Because the method System.out.print() expects an Object as a parameter to print, whereas the void method doesn't return anything.
+* varags (variable Arguments) parameter: We can pass 'n' number of parameters in a method by simply using the syntax '...' (three dots), this '...' should be the last parameter in method signature.
+    public void SampleMethod(int... a){  }, here 'a' is considered as an Array. We can access all values passed to this method by array functions.
+    But we can't pass Array for same scenario 'public void SampleMethod(int[] a){  }'. TO access the method, we should pass an array only as parameter.
 
 Variables:
     1. Local Variable
@@ -17,6 +20,16 @@ Variables:
 
 * Local variables cannot have any AccessModifiers, they access will be Method-Private.
 * 'this' keyword is used on a variable inside a method. To differentiate between global/instance variables to the local variable.
+
+Constructors:
+    * If not defined, compiler will automatically design Non-Parameterized constructor.
+    * If coder has defined Parameterized constructor, compiler will not create Non-Parameterized constructor.
+    * The name of constructor should be same as classname.
+    * They do not have any return type.
+    * They can have any access modifiers.
+    * They cannot be static.
+    * Parameterized & Non-Parameterized constructors.
+    * Inheritance, the ParentClass constructor should be called inside a ChildClass constructor. And this 'super()' line should be the first line in ChildClass constructor.
 
 Static:
     * Static block code will executes before the main() method.
@@ -50,10 +63,15 @@ Default: Package Private
     * Variables/Methods can be accessed only inside the same package of any class.
 
 Final Keyword
-    * Stop value change for Variables
-    * Stop Method Overridding in ChildClass
-    * Stop Inheritance of a class
-    * Abstract/Interface method cannot be used final (Abstract method need to be implemented so cannot be final)
+    * Stop value change for Variables, makes it as a Constant
+    * Stops a specific Method of Over-ridding in ChildClass
+    * Stops Inheriting that class by other classes
+    * Abstract/Interface method cannot be used final (These methods need to be implemented so cannot be final)
+    * 'final' keyword can be placed anywhere
+        - Method: should be before return type. '(final) public (final) static (final) void Method(){}'
+        - Variable: should be before datatype. '(final) public (final) static (final) int A=0'
+        - Class: should be before class keyword.
+    * In final class, all the methods are implicitly final. Because we can't inherit the class hence we can't override the methods.
 
 Abstract Class
     * 'abstract' keyword needs to be mentioned for an abstract method (Non-Implemented method)
@@ -184,3 +202,9 @@ Abstraction
 Encapsulation (Securing Confidential data without being exposed directly)
     * It is the mechanism of wrapping up of data and code acting on the methods together as a single unit.
     * Achieved by declaring the variables of a class as private and then providing the public setter and getter methods to modify and view the variables values.
+
+Packages
+    * All data types, access modifiers, static, system..... are from 'Java.lang'. But if we observe we won't mention 'import java.lang.*' because this package is by default GlobalPackage present within java compiler as it is most commonly used by everyone.
+    * All collection classes/interfaces present in 'import java.util.*'
+    * Import our own code from other packages we use 'import PackageName.ClassName'
+    * To access all static variables/methods directly without using ClassName we can use 'import static PackageName.ClassName'.

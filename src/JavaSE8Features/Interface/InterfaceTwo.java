@@ -4,6 +4,8 @@ public interface InterfaceTwo extends SuperInterface{
 
     String InterTwoAbstractMethod();
 
+    String CommonVariable = "InterTwo Var";
+
     static void InterTwoStaticMethod(){
         System.out.println("InterfaceTwo Static Method");
     }

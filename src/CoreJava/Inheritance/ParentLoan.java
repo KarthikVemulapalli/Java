@@ -6,6 +6,7 @@ public class ParentLoan {
     double principal;
     float interestRate;
     private String accountNo;   //Private Variables can't be accessed in ChildClass
+    String CommonVariable = "ParentClass Var";
 
     //NonParameterized constructor need to be manually written if Parameterized constructor
     public ParentLoan(){
@@ -37,4 +38,7 @@ public class ParentLoan {
         System.out.println("Parent Static Method");
     }
 
+    public void CommonMethod(){
+        System.out.println("ParentClass Method");
+    }
 }

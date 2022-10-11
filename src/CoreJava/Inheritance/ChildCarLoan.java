@@ -2,6 +2,8 @@ package CoreJava.Inheritance;
 
 public class ChildCarLoan extends ParentLoan {
 
+    String CommonVariable = "ChildClass Var";
+
     //Same Variables of ParentClass are not present in ChildClass, so below variables are used without super keyword
     public ChildCarLoan() {		             //ChildClass Constructor
         super("Car Loan");
@@ -31,13 +33,11 @@ public class ChildCarLoan extends ParentLoan {
 
 
     public static void main(String args[]){
-        //The below line can be written when ChildCarLoan extends ParentLoan
-        //'A SuperClass reference variable can hold reference of SubClass object without typecasting'
-        ParentLoan ParentLoanObj = new ChildCarLoan();
 
-        //ChildClass reference variable cannot hold reference of ParentClass object without typecasting'
-        ChildCarLoan ChildCarLoanObj = (ChildCarLoan) new ParentLoan();
-        //Above line is similar to ChildCarLoan ChildCarLoanObj = new ChildCarLoan();
+    }
+
+    public void CommonMethod(){
+        System.out.println("ChildClass Method");
     }
 
 }
