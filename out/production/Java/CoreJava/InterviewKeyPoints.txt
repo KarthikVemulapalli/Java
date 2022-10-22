@@ -1,0 +1,210 @@
+Meaning of "public static void main(String[] args)"
+	* The program execution starts from the main method in Java.
+	* 'public' is access modifier has been used for the main method as it is invoked using the Java tool by JVM. If any other access modifier is given the JVM cannot identify the main method.
+	* The static method has been used for the main method as JVM cannot invoke the main method using the object of the class.
+	* Void is return type. As execution stops after main method. No point in keeping retrun type.
+	* The parameter of the main method is a String array. Any number of inputs can be passed to the Java program during runtime using command-line arguments. A String array is used to store these inputs which can be used in our code.
+
+* Only two access modifiers (public & default) can be used for creating Class/Interface/AbstractClass. Private and Protected cannot be used.
+* During Class/Interface/AbstractClass creation extends should be written ahead of Implements.
+* You cannot call 'void' return type methods in System.out.print(). Because the method System.out.print() expects an Object as a parameter to print, whereas the void method doesn't return anything.
+* varags (variable Arguments) parameter: We can pass 'n' number of parameters in a method by simply using the syntax '...' (three dots), this '...' should be the last parameter in method signature.
+    public void SampleMethod(int... a){  }, here 'a' is considered as an Array. We can access all values passed to this method by array functions.
+    But we can't pass Array for same scenario 'public void SampleMethod(int[] a){  }'. TO access the method, we should pass an array only as parameter.
+
+Variables:
+    1. Local Variable
+    2. Static Variable
+    3. Instance Variable (Global Variable)
+    4. Reference Variable (Classes, interfaces, arrays, enumerations & annotations are reference types in Java. Reference variables hold the objects/values of reference types in Java.)
+
+* Local variables cannot have any AccessModifiers, they access will be Method-Private.
+* 'this' keyword is used on a variable inside a method. To differentiate between global/instance variables to the local variable.
+
+Constructors:
+    * If not defined, compiler will automatically design Non-Parameterized constructor.
+    * If coder has defined Parameterized constructor, compiler will not create Non-Parameterized constructor.
+    * The name of constructor should be same as classname.
+    * They do not have any return type.
+    * They can have any access modifiers.
+    * They cannot be static.
+    * Parameterized & Non-Parameterized constructors.
+    * Inheritance, the ParentClass constructor should be called inside a ChildClass constructor. And this 'super()' line should be the first line in ChildClass constructor.
+
+Static:
+    * Static block code will executes before the main() method.
+    * Static variables/methods can be accessed directly inside a Static/NonStatic method of same class.
+    * Using ClassName Static variables/Methods can be accessed inside a Static/NonStatic method of different class.
+    * You can only make nested classes either static or non-static, the top level class cannot be made static.
+    * static methods/variables belongs to a class but not to the objects of the class.
+    * We cannot override static methods, even though we can create same method in ChildClass it doesn't mean the method is overridden.
+    * We are not allowed to create static class/variables/method inside method.
+    * We can create static class inside class and outside method.
+
+NonStatic:
+    * NonStatic variables/methods can be accessed in static method using ClassObject.
+    * NonStatic variables/methods can be accessed directly inside a NonStatic method of same class.
+    * NonStatic variables/methods can be accessed using ClassObject inside a Static/NonStatic method of different class.
+
+Public:
+    * Public variables/methods can be accessed anywhere in the project using ClassObject (Outside Class) & directly accessed (Inside Class).
+
+Private: Can only be accessed inside the same class.
+    * Private Variables/Methods cannot be accessed outside the class (even with Classname or Class Object).
+    * Private variables/methods can only be accessed inside the class in any non-static method.
+    * Private variables/method can only be accessed inside the class Static method using ClassObject.
+    * Private variables/methods cannot be accessed outside the class or in ChildClass
+    * Private methods cannot be overridden, even though we can create same method in ChildClass it doesn't mean the method is overridden.
+
+Protected:
+    * Variables/Methods can be accessed only in only ChildClass of other package, any class in same package.
+
+Default: Package Private
+    * Variables/Methods can be accessed only inside the same package of any class.
+
+Final Keyword
+    * Stop value change for Variables, makes it as a Constant
+    * Stops a specific Method of Over-ridding in ChildClass
+    * Stops Inheriting that class by other classes
+    * Abstract/Interface method cannot be used final (These methods need to be implemented so cannot be final)
+    * 'final' keyword can be placed anywhere
+        - Method: should be before return type. '(final) public (final) static (final) void Method(){}'
+        - Variable: should be before datatype. '(final) public (final) static (final) int A=0'
+        - Class: should be before class keyword.
+    * In final class, all the methods are implicitly final. Because we can't inherit the class hence we can't override the methods.
+
+Abstract Class
+    * 'abstract' keyword needs to be mentioned for an abstract method (Non-Implemented method)
+    * Abstract class cannot be instantiated (cannot create object of an abstract class)
+    * Abstract class can have constructors & Static methods
+    * There can be an empty abstract class with no abstract/implemented methods
+    * Abstract method should be compulsory present inside an Abstract Class/Interface
+    * All type of AccessModifiers can be used inside an AbstractClass.
+    * An Abstract method cannot be static
+    * The ChildClass should override all the abstract methods in ParentAbstractClass unless the ChildClass is Abstract
+    * Abstract class should only be Extended (extends), not implemented.
+
+Interface
+    * Marker/Tagging interface - Empty Interface
+    * Functional Interface - Only one abstract method & n number of default methods
+    * In an interface all variables are implicitly public, static, and final.
+    * Interfaces cannot have constructors
+    * Object cannot be created to Interface
+    * In an interface methods with no implementation are implicitly public and abstract.
+    * We can create public/default interface
+    * From Java SE8, Interface can have static & default methods
+    * From Java SE9, Interface can have private methods with either static/non-static.
+    * Class, Abstract class, Nested Class, Enum, Dynamic proxy can implements interfaces.
+    * Only interface can extends an interface.
+    * Default methods in ParentInterface can be called in ChildClass using 'InterfaceName.super.DefaultMethodName()'
+
+    ** InterObj cannot access methods specific to ChildClass. By stating below, the InterOneObj can access only Interface methods & Interface Implemented methods in ChildClass
+        Interface InterOneObj = new ChildClass();
+    ** WebDriver driver = new ChromeDriver(); where ChromeDriver is class, WebDriver is interface
+        The above line is only allowed when ChromeDriver implements WebDriver
+        or type casting needs to be done 'Interface obj = (Interface) new Class();
+
+Annotation
+    * Marker annotation - Empty annotation
+    * Single & Multi value annotation - Single & multiple methods present in annotation
+    * '@interface' should be used while creating Annotation
+
+InnerClass:
+    1. LocalInnerClass - NonStaticClass created inside method. (We are not allowed to create static class/variables/method inside method).
+    2. NonStaticInnerClass - NonStaticClass created outside method and inside class
+    3. StaticInnerClass - StaticClass created outside method and inside class
+    4. AnonymousInnerClass - Similar to localClass but no name. And can be created to use at one particular instance.
+
+    * ObjectCreation for NonStaticInnerClass/StaticInnerClass
+        NonStaticInnerClass -
+            1. Create object of OuterClass:
+                OuterClass OuterClassObj = new OuterClass();
+            2. Create object of InnerClass: for creating NonStaticInnerClass object, we require OuterClassObj
+                OuterClass.NonStaticInnerClass NSICObj = OuterClassObj.new NonStaticInnerClass();
+        StaticInnerClass -
+            1. Create object of InnerClass: for creating StaticInnerClass object,
+                OuterClass.StaticInnerClass SICObj = new OuterClass.StaticInnerClass();
+    * AnonymousClass can be created for Class & Interface. Class for overidding methods, Interface for Implementing methods.
+    ** Rare Scenario: We can create object of Interface using AnonymousClass
+    * All cannot create static variables/methods inside any inner class.
+    * AnonymousClass don't have name, the name is decided by compiler.
+    * AnonymousClass cannot be public, private, protected, or static.
+    * Anonymous objects, object creation without reference variable 'new ClassA()'.
+
+Exception Handling:
+    * If exception is not handled using 'try-catch', it stops the execution.
+    * Error vs Exception
+        - All errors are unchecked, exceptions are Checked & unchecked
+        - Errors happen at run-time, exceptions happens at compile-time & run-time
+        - Impossible to recover from error, Possible to recover from exceptions.
+    * 'Object' is ParentClass of 'Throwable'
+        Exceptions & Errors are ChildClasses of 'Throwable'
+            Exceptions - Checked (CompileTime-Issue in coding structure) & Unchecked exceptions (NullPointerException exception)
+            Errors - Assertion Error, VirtualMachine Error
+    * Java Exceptions are of two types
+        1. Built-In (ArithmeticException, ArrayIndexOutOfBoundException, ClassNotFoundException, IOException, InterruptedException, NoSuchFieldException, NoSuchMethodException, NumberFormatException, RuntimeException, StringIndexOutOfBoundsException)
+        2. User Defined
+    * try - Specify block where code is written. we can use nested try.
+      catch - Block of code executes when there is exception in try block. We can use multi catch blocks for single try block.
+      finally - Block of code executes even or not there is a exception.
+        * it is mandatory to use either 'try-catch' or 'try-finally'. try cannot be used alone.
+        * finally block of statement should be the last in order. Order to be followed is 'try -> catch -> finally'
+      throw - Keyword used to throw an exception.
+      throws - Keyword used to declare exceptions, this specifies that there may be certain exception in method. Used in method signature.
+
+    * throw vs throws
+        - throw Used to explicitly throw an Exception, throws is to declare an exception
+        - Checked exceptions cannot be propagated using throw, Checked exceptions can be propagated using throws.
+        - throw used within a method, throws used in method signature
+        - Using throw we cannot throw multiple exceptions, using throws we can declare multiple exceptions.
+
+
+Object-Oriented Programming Structure (OOPS):
+* Object - RealWorld entities that has their own properties and behaviour. Ex: Dog
+* Class - Blueprint from which an objects properties and behaviours are decided.
+    Ex: Properties/Variables (breed, size, age, weight, colour), Behaviours/Methods (eat(), sleep(), run(), bark()).
+* An object is also called as container which contains both Properties & Behaviours.
+
+*Object-Oriented vs Procedural Programming:
+    - BottomUp approach | TopDown Approach
+    - Have access modifiers | Do not have access modifiers
+    - More Secure | Less Secure
+    - Code Re-Usability | Need to modify entire code for each change
+
+Polymorphism (Static/CompileTime & Dynamic/RunTime Polymorphism):
+    * It is only applicable for Methods but not variables.
+    * method overriding (run-time) & method overloading(compile-time)
+    * Method Overloading is achieved with same Method names
+    * Method Overloading is achieved with different parameters, order of parameters type called is also considered.
+    * Method Overloading is not achieved by changing return-type of method.
+
+Inheritance (Is-A relationship)
+    * Calling ParentClass Constructor should be the first line inside a ChildClass constructor
+    * Default Constructor will be called automatically inside ChildClass Constructor
+    * If ParentClass has only parameterized constructor, we should manually call the parent class constructor in ChildClass constructor.
+    * If same Variables of ParentClass are not present in SubClass, ParentClass variables are used without super keyword
+    * In case if same variables are present in ParentClass & ChildClass, then to differentiate 'super' needs to be used to represent ParentClass variables
+    * 'super' keyword is used for a variable/method in a subclass. To differentiate ParentClass variable/method with subclass variable/method.
+    * Private Variables/Methods of ParentClass cannot be accessed in ChildClass.
+    * You cannot override methods of ParentClass if it defined with 'final' keyword
+    * We need to manually implement NonParametrized Constructor if Parametrized Constructor is present.
+
+    ** The below line can be written only when ClassB extends ClassA because 'A SuperClass reference variable can hold reference of SubClass object without typecasting'
+        ClassA Obj = new ClassB();
+    ** In below line, ChildClass reference variable cannot hold reference of ParentClass object without typecasting'.
+        ChildClass ChildClassObj = (ChildClass) new ParentClass();
+        Above line is similar to ChildClass ChildClassObj = new ChildClass();
+
+Abstraction
+    * It is the methodology of hiding the implementation details from the user and only providing the functionality to them.
+    * This is achieved by using Interface/AbstractClass.
+
+Encapsulation (Securing Confidential data without being exposed directly)
+    * It is the mechanism of wrapping up of data and code acting on the methods together as a single unit.
+    * Achieved by declaring the variables of a class as private and then providing the public setter and getter methods to modify and view the variables values.
+
+Packages
+    * All data types, access modifiers, static, system..... are from 'Java.lang'. But if we observe we won't mention 'import java.lang.*' because this package is by default GlobalPackage present within java compiler as it is most commonly used by everyone.
+    * All collection classes/interfaces present in 'import java.util.*'
+    * Import our own code from other packages we use 'import PackageName.ClassName'
+    * To access all static variables/methods directly without using ClassName we can use 'import static PackageName.ClassName'.
