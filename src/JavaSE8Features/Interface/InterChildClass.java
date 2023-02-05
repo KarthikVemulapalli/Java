@@ -28,7 +28,7 @@ public class InterChildClass implements InterfaceTwo, InterfaceOne {
     public void ChildMethod(){
         System.out.println("Child Method");
     }
-    //This is how you can call ParentClass method using ChildObject, if Overridden is done
+    //This is how you can call ParentClass method is called in ChildClass, if Overridden is done
     public void InterOneDefaultMethodUsingChildObj(){
         InterfaceOne.super.InterOneDefaultMethod();
     }
@@ -68,7 +68,6 @@ public class InterChildClass implements InterfaceTwo, InterfaceOne {
         InterOneObj.InterOneDefaultMethodNotOverridden();
         InterOneObj.InterfacesCommonDefaultMethod();
         InterOneObj.InterfacesAbstractCommonMethod();
-
     }
 
 }

@@ -99,7 +99,7 @@ Variables: Local Variable, Static Variable, Instance Variable, Reference Variabl
 Operations:
 	1. Arithmetic
 	2. Bitwise
-	3. Reltional
+	3. Relational
 	4. Ternary
 	5. Sort Circuit Logical
 

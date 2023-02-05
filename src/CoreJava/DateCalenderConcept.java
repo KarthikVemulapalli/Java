@@ -3,6 +3,7 @@ package CoreJava;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class DateCalenderConcept {
 
@@ -25,10 +26,20 @@ public class DateCalenderConcept {
         System.out.println("Current Minute in Hour - "+CalObj.get(Calendar.MINUTE));
     }
 
+    public void ReqETTime() {
+        SimpleDateFormat ETDF = new SimpleDateFormat("MM/dd/yyyy");
+        TimeZone ETTZ = TimeZone.getTimeZone("America/New_York");
+        ETDF.setTimeZone(ETTZ);
+
+        Date currentDate = new Date();
+        System.out.println(ETDF.format(currentDate.getTime()).toString());
+    }
+
     public static void main(String args[] ){
         DateCalenderConcept DateConceptObj = new DateCalenderConcept();
         DateConceptObj.ReqDateFormat();
         DateConceptObj.ReqCalFormat();
+        DateConceptObj.ReqETTime();
     }
 
 }

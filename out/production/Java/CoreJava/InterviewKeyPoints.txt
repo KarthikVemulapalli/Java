@@ -2,7 +2,7 @@ Meaning of "public static void main(String[] args)"
 	* The program execution starts from the main method in Java.
 	* 'public' is access modifier has been used for the main method as it is invoked using the Java tool by JVM. If any other access modifier is given the JVM cannot identify the main method.
 	* The static method has been used for the main method as JVM cannot invoke the main method using the object of the class.
-	* Void is return type. As execution stops after main method. No point in keeping retrun type.
+	* Void is return type. As execution stops after main method. No point in keeping return type.
 	* The parameter of the main method is a String array. Any number of inputs can be passed to the Java program during runtime using command-line arguments. A String array is used to store these inputs which can be used in our code.
 
 * Only two access modifiers (public & default) can be used for creating Class/Interface/AbstractClass. Private and Protected cannot be used.
@@ -18,7 +18,7 @@ Variables:
     3. Instance Variable (Global Variable)
     4. Reference Variable (Classes, interfaces, arrays, enumerations & annotations are reference types in Java. Reference variables hold the objects/values of reference types in Java.)
 
-* Local variables cannot have any AccessModifiers, they access will be Method-Private.
+* Local variables cannot have any AccessModifiers, there access will only be Method-Private.
 * 'this' keyword is used on a variable inside a method. To differentiate between global/instance variables to the local variable.
 
 Constructors:
@@ -29,10 +29,10 @@ Constructors:
     * They can have any access modifiers.
     * They cannot be static.
     * Parameterized & Non-Parameterized constructors.
-    * Inheritance, the ParentClass constructor should be called inside a ChildClass constructor. And this 'super()' line should be the first line in ChildClass constructor.
+    * Inheritance, the ParentClass constructor by default called inside a ChildClass constructor as 'super()'. In case parent class has parameterized constructor we need to call using 'super(parameter)' and it should be the first line in ChildClass constructor.
 
 Static:
-    * Static block code will executes before the main() method.
+    * Static block code will execute before the main() method.
     * Static variables/methods can be accessed directly inside a Static/NonStatic method of same class.
     * Using ClassName Static variables/Methods can be accessed inside a Static/NonStatic method of different class.
     * You can only make nested classes either static or non-static, the top level class cannot be made static.
@@ -63,10 +63,10 @@ Default: Package Private
     * Variables/Methods can be accessed only inside the same package of any class.
 
 Final Keyword
-    * Stop value change for Variables, makes it as a Constant
+    * Stops value change for Variables, makes it as a Constant
     * Stops a specific Method of Over-ridding in ChildClass
     * Stops Inheriting that class by other classes
-    * Abstract/Interface method cannot be used final (These methods need to be implemented so cannot be final)
+    * Abstract/Interface cannot be used final (These methods/classes need to be implemented so cannot be final)
     * 'final' keyword can be placed anywhere
         - Method: should be before return type. '(final) public (final) static (final) void Method(){}'
         - Variable: should be before datatype. '(final) public (final) static (final) int A=0'
@@ -98,7 +98,7 @@ Interface
     * Only interface can extends an interface.
     * Default methods in ParentInterface can be called in ChildClass using 'InterfaceName.super.DefaultMethodName()'
 
-    ** InterObj cannot access methods specific to ChildClass. By stating below, the InterOneObj can access only Interface methods & Interface Implemented methods in ChildClass
+    ** InterfaceObj cannot access methods specific to ChildClass. By stating below, the InterOneObj can access only Interface methods & Interface Implemented methods in ChildClass
         Interface InterOneObj = new ChildClass();
     ** WebDriver driver = new ChromeDriver(); where ChromeDriver is class, WebDriver is interface
         The above line is only allowed when ChromeDriver implements WebDriver

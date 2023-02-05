@@ -71,6 +71,9 @@ Collection: The collection in java is a framework that provides an architecture 
             * Store elements in order they were added
         TreeSet:
             * Store elements in sorted format like Ascending order
+            * ClassCast Exception - Any class that we add to TreeSet should either
+                - provide implementation of a Comparator
+                - implement Comparable interface
         Methods:
             add(element) - Add element
             isEmpty() - Return boolean if list is empty or not
@@ -79,3 +82,10 @@ Collection: The collection in java is a framework that provides an architecture 
             size() - Returns the size of list
             remove(element) - Removes element
             iterator() - Used to iterate inside Set
+
+    Iterator(interface):
+        Methods:
+            hasNext() - Return boolean if next element is present or not
+            next() - Returns the next element in Data Structure
+            hasPrevious() - Return boolean if previous element is present or not
+            previous() - Returns the previous element in Data Structure

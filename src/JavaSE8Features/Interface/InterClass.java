@@ -6,7 +6,6 @@ public class InterClass {
         System.out.println("InterfacePackage Class Method");
     }
 
-
     public static void main(String Args[]){
         InterClass InterClassObj = new InterClass();
         //The below step is not allowed unless InterClass implements InterfaceOne
