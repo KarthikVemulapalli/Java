@@ -1,0 +1,15 @@
+Lambda Expressions
+    It is used to provide the implementation of abstract method in functional interface.
+    Also called as Anonymous functions or Closures.
+        Syntax:
+            FunctionalInterface obj = ()->{Code};, we may pass parameters if the abstract method has parameters.
+
+Functional Interfaces
+
+Default Methods
+
+Predicates
+
+Functions
+
+Stream API

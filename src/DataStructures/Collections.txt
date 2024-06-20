@@ -1,0 +1,131 @@
+* java.util.collection: Collection interface in java.util package.
+
+Java Collections
+    List Interface(ArrayList, LinkedList and Vector)
+    Set Interface (HashSet, LinkedHashSet and TreeSet)
+    Queue Interface (PriorityQueue)
+    Map Interface (HashMap, HashTable, LinkedHashMap and TreeMap)
+
+Data Structures: Organises and Stores data. All data structure has its own advantages and disadvantages.
+
+Wrapper Classes (Byte, Short, Integer, Character, Long, Double, Float, Boolean)
+    These convert Primitive data types to Object data types.
+    Collection Classes will only work with Object data types.
+
+    Boxing: Using wrapper class if we convert Primitive to Object. Using static method 'valueOf()'.
+        Example: Integer Ival = Integer.valueOf(ival);
+
+    Unboxing: Using wrapper class if we convert Object to Primitive. Using nonstatic method 'Value()'.
+        Example: int ival = Ival.intValue();
+
+    Convert Primitives to String. Using static method 'toString()'.
+        Example: String Sval = Integer.toString(ival);
+
+    Convert String to Primitives. Using static method 'parse()'.
+        Example: int ival = Integer.parseInt(Sval);
+
+    Convert String to Object. Using nonstatic method 'toString()'
+        Example: String Sval = Ival.toString();
+
+    Convert Object to String. Using static method 'valueOf()'
+        Example: Integer Ival = Integer.valueOf(Sval);
+
+    * Every Wrapper class has two parameterized constructors that take either primitive or String datatype.
+        Example:
+            Integer Ival = new Integer(ival);
+            Integer Ival = new Integer(Sval);
+
+Arrays:
+    Continuous block in memory.
+    Every element occupies same amount of space in memory.
+    Using the index we can retrieve the element. One of the fastest in java to get the element.
+
+Map: The Map in java is a data structure which stores data in Key, Value pair.
+    SortedMap(interface) extends Map(interface)
+        TreeMap(class) implements SortedMap
+    HashMap(class) implements Map
+        LinkedHashMap(class) extends HashMap
+    HashTable(class) implements Map
+
+    * Methods in HashTable(legacy class) are synchronized, so these cannot be used for Multi-Threading applications.
+
+Collection: The collection in java is a framework that provides an architecture to store and manipulate the group of objects.
+    Collection(interface) extends Iterable(interface)
+        List(interface) | Queue(interface) | Set(interface) all three extends Collection
+
+    List
+        ArrayList(class) | LinkedList(class) | Vector(class) all three implements List
+            Stack(class) extends Vector
+        *Note: All methods in Vector(legacy class) are synchronized, so these cannot be used for Multi-Threading applications.
+    Queue
+        PriorityQueue(class) implements Queue
+        Deque(interface) extends Queue
+            LinkedList(class) | ArrayDeque(class) implements Deque
+    Set
+        HashSet(class) | LinkedHashSet(class) implements Set
+            LinkedHashSet extends HashSet
+        SortedSet(interface) extends Set
+            TreeSet(class) implements SortedSet
+
+    * Using Generic specific object declaration to a data structure, we can restrict data storing init.
+        Example - ArrayList<String> will only accept String data.
+
+    List | Set | Queue
+        Allow duplicate objects | Do not allow duplicate objects | FirstInFirstOut Data structure
+
+    List:
+        ArrayList:
+            * Fast access to elements because of Index based search.
+            * Insertion and Deletions are slow, because these alter other elements index positions.
+            * Initial capacity of ArrayList is 10.
+            * If the initial capacity is filled. Then it will create a new array of 1.5 size of old one.
+                After creating new array java will copy all the old elements to the new one. So it is good practise to mention relevant size of arraylist.
+            * 'remove' method for IntegerArray will consider index value, not the Object value in Array. Because Integer takes preceding than Object
+        LinkedList: It is an ordered collection which stores the data in form of nodes.
+            * Each node has 3 fields
+                1. Object - Stores actual value
+                2. Prev - Points to previous node
+                3. Next - Points to next node
+            * It is a double linked
+            * Access to random elements is slow
+            * Insertions and Deletions are fast
+            * It takes more memory
+        Methods:
+            add(element) - Add element to the last index
+            add(index, element) - Add element to the specified index
+            remove(index)/remove(element) - Removes element or element present in specified index
+                'remove' method for IntegerArray will consider index value, not the Object value in Array. Because Integer takes preceding than Object
+            get(index) - Element present in the specified index
+            set(index, element) - Update the value of element in specified index
+            isEmpty() - Return boolean if list is empty or not
+            indexOf(element) - Returns index of specified element
+            size() - Returns the size of list
+            addAll(index, list) - Add entire new list to an existing list from specified index
+            addAll(list) - Add entire new list to an existing list in last index
+            contains(element) - Return boolean if element present in the list
+
+    Set: Doesn't allow duplicate elements to be stored.
+        HashSet:
+            * Doesn't store elements in order they were added
+        LinkedHashSet:
+            * Store elements in order they were added
+        TreeSet:
+            * Store elements in sorted format like Ascending order
+            * ClassCast Exception - Any class that we add to TreeSet should either
+                - provide implementation of a Comparator
+                - implement Comparable interface
+        Methods:
+            add(element) - Add element
+            isEmpty() - Return boolean if list is empty or not
+            addAll(set) - Add entire new list to an existing list in last index
+            contains(element) - Return boolean if element present in the list
+            size() - Returns the size of list
+            remove(element) - Removes element
+            iterator() - Used to iterate inside Set
+
+    Iterator(interface):
+        Methods:
+            hasNext() - Return boolean if next element is present or not
+            next() - Returns the next element in Data Structure
+            hasPrevious() - Return boolean if previous element is present or not
+            previous() - Returns the previous element in Data Structure

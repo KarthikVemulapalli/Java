@@ -1,0 +1,13 @@
+Algorithm: An algorithm describes steps to perform a specific task. For a given task there can be multiple algorithms.
+
+Big O Notation: Basically how many steps it takes to complete the execution of code.
+    1. Time Complexity
+        Constant        - O(1)
+        Linear          - O(n)
+        Logarithmic     - O(logn base 2)
+        n log-star n    - O(nlogn base 2)
+        Quadratic       - O(n^2)
+    2. Memory Complexity
+
+    * Best approach to get time complexity is,
+        constant > Logarithmic > Linear > n log-star n > Quadratic
